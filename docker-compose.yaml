@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  map:
+    build: ./
+    network_mode: host
+    ports:
+      - "8443-8543:8443-8543"
+    restart: always

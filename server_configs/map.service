@@ -1,0 +1,16 @@
+[Unit]
+Description=Telegram Bot
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=tbot
+WorkingDirectory=/tbot/map-parser
+ExecStart=/usr/bin/python3.10 /tbot/map-parser/bot.py
+ExecReload=/usr/bin/python3.10 /tbot/map-parser/bot.py
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
